@@ -15,4 +15,7 @@ Allows to control the playback of all media sessions registered on Windows from 
 
 ## Installation
 
+> [!IMPORTANT]  
+> This plugin was developped with vvvv 8.0 and might not work on older versions
+
 Go to the Quad Menu, select Settings, and click the _Extensions_ tab. There, search for _VL.MediaControls.HDE_ and click _Install_. The extension will now be available in the Quad Menu under _Windows_.
