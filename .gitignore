@@ -1,0 +1,22 @@
+# Build output
+bin/
+obj/
+artifacts/
+
+# Release build output (csproj puts Release builds in ../lib, and the nuspec packs from there)
+lib/
+
+# Fallout build tool temp files (keep parameters.json and build.schema.json)
+.fallout/temp/
+
+# IDEs
+.idea/
+.vs/
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+*.user
+*.suo
+
+# vvvv
+*.vl.bak

@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <NoWarn>CS1591</NoWarn>
+
+    <!-- Windows.Media.Control lives in the Windows SDK projection, which is only wired up for
+         net10.0-windows10.x targets. vvvv forces plain net10.0, so we download the targeting pack
+         ourselves and reference its two DLLs directly. -->
+    <WinSdkVersion>10.0.26100.87</WinSdkVersion>
+    <NuGetPackageRoot Condition="'$(NuGetPackageRoot)' == ''">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <WinSdkLib>$(NuGetPackageRoot)microsoft.windows.sdk.net.ref\$(WinSdkVersion)\lib\net9.0\</WinSdkLib>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>..\lib</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="VL.Core" Version="2026.8.0-0170-g6f2eb6d984" />
+    <PackageDownload Include="Microsoft.Windows.SDK.NET.Ref" Version="[$(WinSdkVersion)]" />
+    <Reference Include="Microsoft.Windows.SDK.NET">
+      <HintPath>$(WinSdkLib)Microsoft.Windows.SDK.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="WinRT.Runtime">
+      <HintPath>$(WinSdkLib)WinRT.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="VL.Core" />
+    <Using Include="VL.Core.Import" />
+    <Using Include="VL.Lib.Collections" />
+  </ItemGroup>
+
+</Project>

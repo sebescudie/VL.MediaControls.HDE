@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>VL.MediaControls.HDE</id>
+    <version>0.0.0</version>
+    <title>VL.MediaControls.HDE</title>
+    <authors>vvvv</authors>
+    <projectUrl>https://github.com/sebescudie/VL.MediaControls.HDE</projectUrl>
+    <repository type="git" url="https://github.com/sebescudie/VL.MediaControls.HDE.git" />
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Control your media sessions from the vvvv editor</description>
+    <tags>VL vvvv media control</tags>
+    <license type="expression">LGPL-3.0-only</license>
+    <readme>docs\README.md</readme>
+  </metadata>
+  <files>
+    <file src="..\lib\**\*.dll" target="lib\" exclude="" />
+    <file src="..\*.vl" target="" exclude="" />
+    <file src="..\README.md" target="docs\" />
+  </files>
+</package>
